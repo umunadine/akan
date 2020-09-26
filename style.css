@@ -10,6 +10,9 @@ h2{
 h3{
     font-style: italic;
 }
+.About>p{
+    text-align: center;
+}
 .Akan>section{
     text-align:center;
     border: 1px solid black ;
