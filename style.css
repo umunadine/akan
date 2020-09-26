@@ -27,4 +27,7 @@ h3{
 .Akan>h3{
     text-align:center;
     
-    }
+}
+img{
+   justify-content: space-between;
+}
