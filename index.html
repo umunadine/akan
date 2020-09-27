@@ -18,35 +18,66 @@
         </div>
         </header>
         <div class="black">
-        <div class="Akan">
-            <h3>Find your Alkan Names</h3>
-            <section>
-                <h3>Go ahead,try it out</h3>
-                <p>Enter the date</p>
-               <form name="myForm" id="form">
-                   <input type="text" name="day" id="day" placeholder="day"><br>
-                   <input type="text" name="month" id="month" placeholder="month"><br>
-                   <input type="text" name="year" id="year" placeholder="year"><br>
-                   <p>Choose the gender</p>
-                   <label for="Male"> 
-                        <input id="male" value="male" type="radio" name="gender">Male
-                    </label><br>
-                    <label for="Female"> 
-                        <input id="female" value="female" type="radio" name="gender">Female
-                    </label><br><br>
-                    <input type="submit" name="Submit" >   
-               </form>
-            </section>
-        </div>
+            <div class="Akan">
+                <h3>Find your Alkan Names</h3>
+                <section>
+                    <h3>Go ahead,try it out</h3>
+                    <p>Enter the date</p>
+                   <form  name="myForm" id="form">
+                     <input type="text" name="day" id="day" placeholder="day"><br>
+                       <input type="text" name="month" id ="month" placeholder="month in digits"><br>
+                       <input type="text" name="year" id ="year" placeholder="year"><br>
+                       <p>Choose the gender</p>
+                       <label for="Male"> 
+                            <input id="male" value="male" type="radio" name="gender">Male
+                        </label><br>
+                        <label for="Female"> 
+                            <input id="female" value="female" type="radio" name="gender">Female
+                        </label><br><br>
+                        <button onclick="man(day,month,year,gender)">Submit</button>   
+                   </form>
+                </section>
+            </div>
         </div>
     </div>
-       <!-- <div class="More">
-            <h2>More</h2>
-            <h3>Want to know more about Alkan names,click on these image:</h3><br>
-            <a href="https://en.wikipedia.org/wiki/Akan_names"><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png"  width="150" height="200" alt="wikipedi"></a>
-            <a href="https://fairafric.com/let-the-name-speak-the-deep-meaning-of-ghanaian-first-names"><img src="https://fairafric.com/wp-content/uploads/2020/01/pic.png" alt="fairafric" width="150" height="200"></a> 
-            <a href="https://theculturetrip.com/africa/ghana/articles/everything-you-need-to-know-about-the-ghanaian-tradition-of-day-names/"><img src="https://img.theculturetrip.com/wp-content/uploads/2015/12/logo-512x512.png?v=1 width="150" height="200"" alt="culture"></a>
-        </div>-->
+    <script>
+    function man(day,month,year,gender){
+    var day =document.forms["myForm"]["day"].value;
+    var month =document.forms["myForm"]["month"].value;
+    var year =document.forms["myForm"]["year"].value;
+    var gender =document.forms["myForm"]["gender"].value;
+    var male=["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];
+    var female =["Akosua","Adwoa","Abenaa","Akwa","Yaa","Afua","Ama"];
+     if((day<=0)||(day>31)){
+         alert(day+"/"+month+"/"+year+" "+"is invalid");
+     }
+     else if((month<=0)||(month>12)){
+         alert(day+"/"+month+"/"+year+" "+" is invalid");   
+     }
+     else{
+         while (year >= 100){
+             var a=Math.floor(year/=10);
+          }
+          var  b= parseInt(year.toString().substr(-2));
+         var week=Math.floor((((a/4) -2*a-1) + ((5*b/4) ) + ((26*(month+1)/10)) + day ) % 7);
+         if(gender=="female"){
+     for(var i=0;i<=female.length;i++){
+         if(week == i){
+            alert("Your weekday is"+" "+week+" "+"Your Akan Name is"+" "+female[i]);
+         }
+     }
+ }
+ else{
+     for(var i=0;i<=male.length;i++){
+         if(week == i){
+        alert("Your weekday is"+" "+week+" "+"Your Akan Name is"+" "+male[i]);
+         }
+     }  
+ }
+     }
+ }
+     
+    </script>
         <footer>
             <p>Akan Names © 2020, All Rights Reserved</p>
         </footer>
