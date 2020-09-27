@@ -19,16 +19,16 @@
             <section>
                 <h3>Go ahead,try it out</h3>
                 <p>Enter the date</p>
-               <form action id="form">
-                   <input type="text" name="day" id placeholder="day"><br>
-                   <input type="text" name="month" id placeholder="month"><br>
-                   <input type="text" name="year" id placeholder="year"><br>
+               <form name="myForm" id="form">
+                   <input type="text" name="day" id="day" placeholder="day"><br>
+                   <input type="text" name="month" id="month" placeholder="month"><br>
+                   <input type="text" name="year" id="year" placeholder="year"><br>
                    <p>Choose the gender</p>
                    <label for="Male"> 
-                        <input id="male" type="radio" name="gender">Male
+                        <input id="male" value="male" type="radio" name="gender">Male
                     </label><br>
                     <label for="Female"> 
-                        <input id="female" type="radio" name="gender">Female
+                        <input id="female" value="female" type="radio" name="gender">Female
                     </label><br><br>
                     <input type="submit" name="Submit" >   
                </form>
